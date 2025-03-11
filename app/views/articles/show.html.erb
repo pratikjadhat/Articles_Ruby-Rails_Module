@@ -1,0 +1,37 @@
+<h1 class="text-center my-4 text-black">Showing Article Details</h1>
+
+<div class="container">
+  <!-- Card for Article Details with Shadow and Responsive Layout -->
+  <div class="card shadow-lg border-light rounded">
+    <div class="card-header text-center bg-info text-white">
+      <h4 class="font-weight-bold">Article Details</h4>
+    </div>
+    <div class="card-body">
+      <!-- Article Title -->
+      <div class="mb-3">
+        <h5 class="card-title font-weight-bold text-info">Title: <%= @article.title %></h5>
+      </div>
+      <!-- Article Description -->
+      <div class="mb-4">
+        <p class="card-text"><strong>Description:</strong> <%= @article.description %></p>
+      </div>
+
+      <!-- Edit and Delete Buttons - Styled with Hover Effects -->
+      <div class="d-flex justify-content-center gap-3">
+        <div>
+          <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-outline-success btn-lg shadow-sm' %>
+        </div>
+        <div>
+          <%= form_with(model: @article, method: :delete, data: { confirm: "Are you sure?" }, local: true) do |form| %>
+            <%= form.submit 'Delete', class: 'btn btn-danger btn-lg shadow-sm' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Footer with Return Link -->
+    <div class="card-footer text-center bg-light">
+      <%= link_to 'Return to Articles Listing', articles_path, class: 'btn btn-outline-secondary btn-lg shadow-sm' %>
+    </div>
+  </div>
+</div>

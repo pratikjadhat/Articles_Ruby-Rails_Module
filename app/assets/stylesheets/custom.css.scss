@@ -1,0 +1,25 @@
+/* app/assets/stylesheets/application.scss */
+@import 'bootstrap/dist/css/bootstrap.min.css'; /* Import Bootstrap's styles */
+
+/* Custom styles for mobile */
+body {
+  background-color: lightblue;
+}
+
+.navbar {
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: lightgreen;
+  }
+
+  .navbar {
+    background-color: blue;
+  }
+
+  .nav-link{
+    color: white !important;
+  }
+}

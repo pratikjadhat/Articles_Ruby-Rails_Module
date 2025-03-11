@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <!-- Bootstrap 5 CSS -->
+  <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+
+  <style>
+    /* Custom styling for the container and jumbotron */
+    #home-container {
+      margin-top: 50px;  /* Adjust space between navbar and jumbotron */
+    }
+
+
+
+    #jumbo {
+      background-image: url('<%= asset_path("jimg.jpg") %>'); /* Path to the jimg.jpg image */
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;  /* Height of the jumbotron */
+      display: flex;
+      flex-direction: column;  /* Stack content vertically */
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff; /* Text color */
+      padding: 20px;
+    }
+
+    #jumbo h1 {
+      font-size: 3rem;  /* Font size for title */
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: red;
+    }
+
+    #jumbo p {
+      font-size: 1.25rem; /* Font size for the paragraph */
+      margin-bottom: 20px;
+      color: red;
+    }
+
+    #jumbo .btn {
+      background-color: #28a745; /* Green background for the button */
+      border-color: #28a745;
+      font-size: 1.1rem;
+    }
+
+    #jumbo .btn:hover {
+      background-color: #218838; /* Darker green when hovering */
+      border-color: #1e7e34;
+    }
+
+    /* Adding some spacing to ensure the content isn't too close to the edges */
+    .container {
+      padding: 0 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main content -->
+  <div class="container" id="home-container">
+    <div class="hero text-center" id="jumbo">
+      <h1 class="display-4">ALPHA BLOG</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <a class="btn btn-success btn-lg" href="#" role="button">Sign up</a>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

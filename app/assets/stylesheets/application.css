@@ -1,0 +1,129 @@
+/* application.scss or application.css */
+/* application.scss or application.css */
+
+/* Import Bootstrap and custom styles */
+@import 'bootstrap';
+@import 'bootstrap/dist/css/bootstrap';
+@import 'custom';
+
+/* Ensure full height for the body */
+
+#logo {
+  font-weight: bold;       /* Makes the text bold */
+  font-size: 2rem;         /* Increases the font size */
+}
+/* Flexbox layout for body */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* Ensure the body takes up full height */
+  overflow: hidden; 
+}
+
+/* Main content */
+#page-content {
+  flex-grow: 1;  /* This will expand the content to take up remaining space */
+  overflow-y: auto;  /* Allow vertical scroll within content if needed */
+}
+
+/* Sticky footer */
+footer#sticky-footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+  margin-top: auto;  /* Pushes footer to the bottom when there is not enough content */
+}
+
+footer#sticky-footer .container {
+  text-align: center;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: black;  /* Black background for navbar */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white !important;  /* Make all links white */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #d80c0c !important;  /* Optional: Hover color change */
+}
+
+.navbar-toggler-icon {
+  background-color: white;  /* White color for navbar toggle icon */
+}
+
+.navbar-brand {
+  color: white !important;  /* White color for brand text */
+}
+
+/* Additional Customizations for Button */
+.navbar .btn-outline-success {
+  color: white !important;  /* Change button text color to white */
+  border-color: white !important;  /* Border color of button */
+}
+
+.navbar .btn-outline-success:hover {
+  color: #d80c0c !important;  /* Hover color for button text */
+  background-color: white !important;  /* Hover background color for button */
+  border-color: #d80c0c !important;  /* Hover border color for button */
+}
+
+/* Home container styles (example if you want the content to fill the page) */
+#home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 100px;  /* Adjust this value if needed to add space above the container */
+  overflow: hidden;  /* Ensure the content doesn't scroll */
+}
+
+/* Jumbotron (Hero Section) Styles */
+#jumbo {
+  padding-top: 35px;
+  background-image: url('<%= asset_path("jimg.jpg") %>'); /* Ensure the image path is correct */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  color: #fff;  /* Ensuring text is visible on top of the background image */
+}
+
+#jumbo h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  color: #d80c0c;  /* You can change the color as needed */
+}
+
+#jumbo p {
+  position: relative;
+  z-index: 1;
+  color: #d80c0c;  /* You can change the color as needed */
+}
+
+/* Optional: Adjust button appearance if necessary */
+#jumbo .btn {
+  z-index: 1;
+}
+
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require bootstrap
+ *= require_tree .
+ *= require_self
+ */
